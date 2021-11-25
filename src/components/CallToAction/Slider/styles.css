@@ -1,0 +1,7 @@
+
+.mySwiper {
+  --swiper-navigation-color: #FFBA08;
+  --swiper-theme-color: #FFBA08;
+  --swiper-pagination-bullet-inactive-color: #999999;
+  --swiper-pagination-bullet-size: 16px
+}

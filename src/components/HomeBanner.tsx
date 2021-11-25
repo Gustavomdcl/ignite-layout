@@ -7,6 +7,7 @@ export function HomeBanner(){
     backgroundImage="url('/images/home_banner_background.png')"
     backgroundPosition="center"
     backgroundSize="cover"
+    mb={["0px","33px"]}
   >
     <Container>
       <Flex
@@ -37,7 +38,7 @@ export function HomeBanner(){
             src="/images/airplane.png"
             display={["none","inherit"]}
             position="absolute"
-            right="0"
+            right="10"
             bottom="-33px"
           />
         </Box>

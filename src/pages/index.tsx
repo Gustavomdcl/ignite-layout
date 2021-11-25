@@ -1,14 +1,18 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 
 import { Header } from "../components/Header"
 import { HomeBanner } from "../components/HomeBanner"
+import { Features } from "../components/Features"
+import { CallToAction } from "../components/CallToAction"
 
 export default function Home() {
   return (<Box>
     <Header />
     <Box as="main">
       <HomeBanner />
-      <h1>oioi</h1>
+      <Features />
+      <Divider borderColor="dark.headingsText" width={["60px","90px"]} mx="auto" />
+      <CallToAction />
     </Box>
   </Box>)
 }
