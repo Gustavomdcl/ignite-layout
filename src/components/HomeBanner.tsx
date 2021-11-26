@@ -22,7 +22,7 @@ export function HomeBanner(){
         <Box
           w={"100%"}
           maxW={["100%","524px"]}
-          color="light.white"
+          color="light.headingsText"
         >
           <VStack spacing={["2","5"]} align="start">
             <Text 

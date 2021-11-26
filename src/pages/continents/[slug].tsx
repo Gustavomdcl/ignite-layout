@@ -1,12 +1,38 @@
+import { Box } from "@chakra-ui/react";
 import { GetServerSideProps } from "next"
 
+import { Header } from "../../components/Header"
+import { ContinentBanner } from "../../components/ContinentBanner"
+
 interface ContinentsProps {
-  slug: string
+  post: {
+    slug: string
+    title: string
+    description: string
+    background: string
+    analitycs: {
+      country_number: number,
+      language_number: number,
+      city_number: number
+    },
+    populous?: [
+      {
+        city: string
+        country: string
+        background: string
+        flag: string
+      }
+    ]
+  }
 }
 
-export default function Continents({slug}:ContinentsProps){
+export default function Continents({post}:ContinentsProps){
   return(
-    <>Continents</>
+    <Box>
+      <Header />
+      <ContinentBanner />
+      <p>oioi</p>
+    </Box>
   )
 }
 
@@ -15,20 +41,35 @@ export const getServerSideProps: GetServerSideProps = async ({params}) => {
 
   
 
-  // const post = {
-  //   slug,
-  //   title: RichText.asText(response.data.title),
-  //   content: RichText.asHtml(response.data.content),
-  //   updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR',{
-  //     day: '2-digit',
-  //     month: 'long',
-  //     year: 'numeric',
-  //   }),
-  // }
+  const post = {
+    slug,
+    title: 'Europa',
+    description: 'A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste',
+    background: '/images/europe_continent_background.png',
+    analitycs: {
+      country_number: 50,
+      language_number: 60,
+      city_number: 27
+    },
+    populous: [
+      {
+        city: 'Londres',
+        country: 'Reino Unido',
+        background: '/images/london.png',
+        flag: '/images/united_kindom.png'
+      },
+      {
+        city: 'Paris',
+        country: 'França',
+        background: '/images/paris.png',
+        flag: '/images/france.png'
+      }
+    ]
+  }
 
   return {
     props: {
-      slug,
+      post,
     },
   }
 }

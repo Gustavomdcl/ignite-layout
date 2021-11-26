@@ -72,7 +72,7 @@ export function Slider(){
           <Text
             fontWeight="bold"
             fontSize={["2xl","5xl"]}
-            color="light.white"
+            color="light.headingsText"
           >{slide.title}</Text>
           <Text
             fontWeight="bold"
