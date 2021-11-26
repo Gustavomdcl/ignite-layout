@@ -3,6 +3,7 @@ import { GetServerSideProps } from "next"
 
 import { Header } from "../../components/Header"
 import { ContinentBanner } from "../../components/ContinentBanner"
+import { ContinentInformation } from "../../components/ContinentInformation"
 
 interface ContinentsProps {
   post: {
@@ -10,11 +11,11 @@ interface ContinentsProps {
     title: string
     description: string
     background: string
-    analitycs: {
+    analytics: {
       country_number: number,
       language_number: number,
       city_number: number
-    },
+    }
     populous?: [
       {
         city: string
@@ -31,6 +32,7 @@ export default function Continents({post}:ContinentsProps){
     <Box>
       <Header />
       <ContinentBanner title={post.title} background={post.background} />
+      <ContinentInformation description={post.description} analytics={post.analytics} populous={post.populous} />
       <p>oioi</p>
     </Box>
   )
@@ -46,7 +48,7 @@ export const getServerSideProps: GetServerSideProps = async ({params}) => {
     title: 'Europa',
     description: 'A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste',
     background: '/images/europe_continent_background.png',
-    analitycs: {
+    analytics: {
       country_number: 50,
       language_number: 60,
       city_number: 27
