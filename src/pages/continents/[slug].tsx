@@ -30,7 +30,7 @@ export default function Continents({post}:ContinentsProps){
   return(
     <Box>
       <Header />
-      <ContinentBanner />
+      <ContinentBanner title={post.title} background={post.background} />
       <p>oioi</p>
     </Box>
   )

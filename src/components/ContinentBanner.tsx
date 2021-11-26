@@ -2,10 +2,15 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 
 import { Container } from './Container'
 
-export function ContinentBanner(){
+interface ContinentBannerProps {
+  title: string
+  background: string
+}
+
+export function ContinentBanner({title,background}:ContinentBannerProps){
   return(
     <Box
-      backgroundImage="url('/images/europe_continent_background.png')"
+      backgroundImage={`url('${background}')`}
       backgroundPosition="center"
       backgroundSize="cover"
     >
@@ -25,7 +30,7 @@ export function ContinentBanner(){
             fontWeight="semibold"
             fontSize={["2xl","5xl"]}
             color="light.headingsText"
-          >Europa</Text>
+          >{title}</Text>
         </Flex>
       </Container>
     </Box>
