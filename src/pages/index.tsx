@@ -4,6 +4,7 @@ import { Header } from "../components/Header"
 import { HomeBanner } from "../components/HomeBanner"
 import { Features } from "../components/Features"
 import { CallToAction } from "../components/CallToAction"
+import { CitiesContainer } from "../components/CitiesContainer"
 
 export default function Home() {
   return (<Box>

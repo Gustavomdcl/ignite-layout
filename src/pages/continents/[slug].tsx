@@ -4,6 +4,8 @@ import { GetServerSideProps } from "next"
 import { Header } from "../../components/Header"
 import { ContinentBanner } from "../../components/ContinentBanner"
 import { ContinentInformation } from "../../components/ContinentInformation"
+import { CitiesContainer } from "../../components/CitiesContainer"
+
 
 interface ContinentsProps {
   post: {
@@ -33,7 +35,7 @@ export default function Continents({post}:ContinentsProps){
       <Header />
       <ContinentBanner title={post.title} background={post.background} />
       <ContinentInformation description={post.description} analytics={post.analytics} populous={post.populous} />
-      <p>oioi</p>
+      {post.populous&&<CitiesContainer populous={post.populous} />}
     </Box>
   )
 }
